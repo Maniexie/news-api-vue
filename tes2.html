@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+
+    <!-- Link Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+
+
+
+    <div id="app" class="container mt-4">
+        <h1>Article</h1>
+        <div class="row">
+            <div v-for="art in articles" :key="art.id" class="col-md-4 mb-4">
+                <div class="card" style="width: 100%;">
+                    <img class="card-img-top" :src="art.urlToImage" alt="Card image cap" v-if="art.urlToImage">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ art.source.name }}</h5>
+                        <h5 class="card-title">{{ art.author }}</h5>
+                        <h5 class="card-title">{{ art.title }}</h5>
+                        <p class="card-text">{{ art.description }}</p>
+                        <span>{{ art.publishedAt }}</span>
+                        <a :href="art.url" class="btn btn-primary">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="news1">
+        <div class="row">
+            <div class="col-8">
+                <h1>tes</h1>
+                <img src="https://th.bing.com/th/id/R.4c5f4b654d397dbf388439c146fc2a43?rik=tAXLyC2QQDAW4w&riu=http%3a%2f%2fwww.tandemconstruction.com%2fsites%2fdefault%2ffiles%2fstyles%2fproject_slider_main%2fpublic%2fimages%2fproject-images%2fIMG-Student-Union_6.jpg%3fitok%3dSIO_SJym&ehk=J7Rf60RWZAMlFREdj%2f7pdLWdGMn%2bS07tQsou0pZGgIA%3d&risl=&pid=ImgRaw&r=0"
+                    class="img-thumbnail" alt="..." width="500px">
+                <h1>Nurdian</h1>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, tempora? Blanditiis, debitis
+                    commodi! Quis voluptatum et culpa unde, soluta, veniam dicta alias excepturi ipsum quia, a hic neque
+                    in sint esse sunt nobis. Consequatur est magnam, nihil ullam minima accusamus deserunt dolores
+                    ducimus aliquam magni. Sunt praesentium, adipisci illum facere voluptatibus iste, at natus ea labore
+                    molestiae, sequi repellendus suscipit ab magnam perspiciatis excepturi porro. Quasi mollitia tempora
+                    asperiores perspiciatis architecto minus minima officia sapiente iste odit similique, dolor, cum
+                    molestias earum voluptatum laboriosam fuga numquam facilis veritatis ipsum veniam debitis! Error
+                    esse, itaque molestias dolore fugit, distinctio obcaecati impedit ab reprehenderit suscipit omnis
+                    dolorem totam aut veniam expedita tenetur? Consectetur, veniam odit pariatur possimus repellat sit,
+                    rerum error autem ea nostrum dolore eum aliquid dolor ad, similique nihil consequatur. Illum,
+                    repudiandae labore, necessitatibus quaerat ducimus porro cum ullam quidem, debitis fugit magnam
+                    incidunt? Perferendis minus est ex suscipit delectus a ea, placeat, voluptate ipsum sit maiores
+                    autem! Voluptatum culpa nam tempora quae quibusdam excepturi recusandae totam sequi numquam. Velit
+                    iusto in dignissimos error similique veritatis impedit omnis, vel numquam reiciendis modi ab quas
+                    accusamus beatae qui ad inventore molestias veniam repudiandae animi rem iste. Voluptatem adipisci
+                    illum quidem ullam? </p>
+                <tbody>
+                    <tr v-for="artss in articles" :key="artss.id">
+                        <td>{{artss.title}}</td>
+                    </tr>
+                </tbody>
+            </div>
+            <div class="col-4">
+                <div class="row">
+                    <div class="grid text-center">
+                        <div class="g-col-4">
+                            <div class="overflow-auto">
+                                <img src="" alt="">
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Assumenda possimus
+                                    accusamus, incidunt aut, suscipit laudantium maxime architecto temporibus atque
+                                    dicta voluptatem, dolores aperiam sequi? Magni, rerum dicta? Quo minus consectetur
+                                    repellat labore cumque enim alias ipsa iste vero et. Numquam amet libero quos a qui
+                                    exercitationem? Sunt maxime soluta sit, consequuntur deleniti blanditiis omnis
+                                    facere rem tempora quos dignissimos eligendi minus eum iusto similique. Atque ut
+                                    unde a tempora consequatur nostrum! Officiis debitis labore velit sit odio aperiam
+                                    iste quasi? Similique nobis aperiam accusamus quam possimus dolor aliquam nesciunt
+                                    autem deserunt quibusdam, nostrum, non quod aut rerum? Ipsam inventore ducimus
+                                    tempore sint fuga tenetur, non assumenda iusto suscipit, enim at dignissimos aliquam
+                                    natus molestias doloremque harum deleniti, nostrum corporis possimus nam incidunt
+                                    autem. Facere, neque. Dicta ipsa ab, repellendus molestias ratione illum eum
+                                    laudantium! Nobis ex quidem, corporis fugit eius delectus similique alias
+                                    voluptatibus consequuntur recusandae voluptate optio culpa quos minima temporibus
+                                    quam nisi sapiente aut reprehenderit dolor facere doloremque illum. Impedit
+                                    laudantium repellendus, voluptate adipisci voluptatum distinctio nihil voluptas
+                                    officia aliquam molestias modi autem mollitia commodi culpa ab atque eum minima
+                                    nesciunt consectetur, quam eius error placeat quas harum! Pariatur placeat suscipit
+                                    sapiente, temporibus aliquam itaque distinctio officiis cupiditate.</p>
+                            </div>
+                        </div>
+                        <div class="g-col-4">.g-col-4</div>
+                        <div class="g-col-4">.g-col-4</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

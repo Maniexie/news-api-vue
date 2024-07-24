@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="App">
+        {{message}}
+    </div>
+    <div id="App2">
+        <span v-bind:title="message">
+            Arahkan mouse Anda kesini dan tunggu dalam beberapa detik
+            untuk melihat judul pesan yang dinamis
+        </span>
+        <!-- {{message}} -->
+    </div>
+
+
+    <div id="App3">
+        <p v-if="look">Saya terlihat</p>
+        {{ pesan }}
+    </div>
+
+
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                {{ todo.teks }}
+            </li>
+        </ol>
+    </div>
+
+
+    <ol>
+        <!-- Buat komponen todo-item -->
+        <todo-item></todo-item>
+        <todo-item></todo-item>
+        <todo-item></todo-item>
+    </ol>
+
+    <script>
+        var app = new Vue({
+            el: '#App',
+            data: {
+                message: "ini message dari vue ",
+            }
+        })
+
+
+        var app2 = new Vue({
+            el: '#App2',
+            data: {
+                message: "anda memuat halaman ini pada jam" + new Date().toTimeString('Asia/Jakarta'),
+            }
+
+        })
+
+        var app3 = new Vue({
+            el: '#App3',
+            data: {
+                look: true,
+                pesan: "saya app 3"
+            }
+        })
+
+
+        var app4 = new Vue({
+            el: '#app-4',
+            data: {
+                todos: [
+                    { teks: 'Belajar JavaScript' },
+                    { teks: 'Belajar Vue' },
+                    { teks: 'Buat proyek keren' },
+                    { teks: 'Nurdian Aprilianto' },
+                ]
+            }
+        })
+
+        var app5 = new Vue({
+            el: '#app-5',
+
+        })
+        Vue.component('todo-item', {
+            template: '<li>Ini adalah hal hal yang harus dilakukan</li>'
+        })
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
